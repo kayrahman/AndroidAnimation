@@ -8,4 +8,17 @@
     <color name="contentBackground">#ee5673</color>
     <color name="text">#FFFFFF</color>
     <color name="tintImage">#41000000</color>
+
+
+
+    <!--category related-->
+    <color name="colorBgBtnSelect">#FFC000</color>
+    <color name="colorIndicatorNonSelected">#AAAAAA</color>
+    <color name="colorBlackTransparent">#ca000000</color>
+    <color name="colorSubHim">#00e8fd</color>
+    <color name="colorSubHer">#ff79a1</color>
+    <color name="colorTransparent">#50000000</color>
+    <color name="colorTransparentFull">#10000000</color>
+    <color name="colorTransparentDarker">#CC000000</color>
+
 </resources>
