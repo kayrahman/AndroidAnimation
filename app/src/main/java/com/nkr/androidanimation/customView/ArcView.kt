@@ -24,8 +24,8 @@ private enum class FanSpeed(val label: Int) {
 }
 
 
-private const val RADIUS_OFFSET_LABEL = 30          //Offset from dial radius to draw text label
-private const val RADIUS_OFFSET_INDICATOR = -35
+private const val RADIUS_OFFSET_LABEL = 20          //Offset from dial radius to draw text label
+private const val RADIUS_OFFSET_INDICATOR = -15
 
 class ArcView@JvmOverloads constructor(
               context: Context,
@@ -50,14 +50,14 @@ class ArcView@JvmOverloads constructor(
         // for every screen refresh.
         style = Paint.Style.FILL
         textAlign = Paint.Align.CENTER
-        textSize = 55.0f
-        typeface = Typeface.create("", Typeface.BOLD)
+        textSize = 20.0f
+        typeface = Typeface.create("", Typeface.NORMAL)
     }
 
 
     override fun onSizeChanged(width: Int, height: Int, oldWidth: Int, oldHeight: Int) {
         // Calculate the radius from the smaller of the width and height.
-        radius = (min(width, height) / 2.0 * 0.8).toFloat()
+        radius = (min(width, height) / 2.0 * 0.5).toFloat()
     }
 
 
@@ -72,21 +72,25 @@ class ArcView@JvmOverloads constructor(
 
     override fun onDraw(canvas: Canvas) {
         super.onDraw(canvas)
+
         // Set dial background color based on the selection.
         paint.color = when (fanSpeed) {
-            FanSpeed.OFF -> Color.GRAY
+            FanSpeed.OFF -> Color.YELLOW
             FanSpeed.LOW -> fanSpeedLowColor
             FanSpeed.MEDIUM -> fanSpeedMediumColor
             FanSpeed.HIGH -> fanSeedMaxColor
         } as Int
         // Draw the dial.
         canvas.drawCircle((width / 2).toFloat(), (height / 2).toFloat(), radius, paint)
+
         // Draw the indicator circle.
         val markerRadius = radius + RADIUS_OFFSET_INDICATOR
         pointPosition.computeXYForSpeed(fanSpeed, markerRadius)
         paint.color = Color.BLACK
+
         canvas.drawCircle(pointPosition.x, pointPosition.y, radius/12, paint)
         // Draw the text labels.
+        paint.color = Color.WHITE
         val labelRadius = radius + RADIUS_OFFSET_LABEL
         for (i in FanSpeed.values()) {
             pointPosition.computeXYForSpeed(i, labelRadius)

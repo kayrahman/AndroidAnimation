@@ -3,13 +3,16 @@
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#CA035E</color>
-    <color name="black">#E9EDF0</color>
+    <color name="black">#010b13</color>
     <color name="colorBluish">#FFE9EDF0</color>
     <color name="contentBackground">#ee5673</color>
     <color name="text">#FFFFFF</color>
     <color name="tintImage">#41000000</color>
 
 
+
+    <color name="colorMustardDark">#e9a038</color>
+    <color name="colorMustardLight">#f8c34b</color>
 
     <!--category related-->
     <color name="colorBgBtnSelect">#FFC000</color>
