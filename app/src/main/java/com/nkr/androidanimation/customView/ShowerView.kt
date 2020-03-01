@@ -2,6 +2,7 @@ package com.nkr.androidanimation.customView
 
 import android.animation.AnimatorSet
 import android.animation.ObjectAnimator
+import android.animation.ValueAnimator
 import android.content.Context
 import android.graphics.*
 import android.util.AttributeSet
@@ -98,21 +99,31 @@ constructor(context:Context,
         shrinkAnimator.interpolator = LinearOutSlowInInterpolator()
         shrinkAnimator.startDelay = ANIMATION_DELAY
 
-        // mover animation
 
+        //grow animation
+        val repeatAnimator = ObjectAnimator.ofFloat(
+            this,
+            "radius", mRadius, maxRadius
+        )
+        repeatAnimator.duration = ANIMATION_DURATION
+        repeatAnimator.interpolator = LinearInterpolator()
+        repeatAnimator.repeatCount = 1
+        repeatAnimator.repeatMode = ValueAnimator.REVERSE
+
+        // mover animation
         val moverAnimator = ObjectAnimator.ofFloat(
             this,
             "radius", circleStartXPosition
         )
 
-        moverAnimator.duration = ANIMATION_DURATION
+      //  moverAnimator.duration = ANIMATION_DURATION
         moverAnimator.interpolator = LinearOutSlowInInterpolator()
 
 
 
        val animatorSet = AnimatorSet()
         animatorSet.play(growAnimator).before(shrinkAnimator)
-        animatorSet.play(shrinkAnimator).after(growAnimator)
+        animatorSet.play(repeatAnimator).after(shrinkAnimator)
         animatorSet.playTogether(moverAnimator,growAnimator,shrinkAnimator)
 
 
