@@ -23,5 +23,6 @@
     <color name="colorTransparent">#50000000</color>
     <color name="colorTransparentFull">#10000000</color>
     <color name="colorTransparentDarker">#CC000000</color>
+    <color name="colorDark">#1d1e1d</color>
 
 </resources>

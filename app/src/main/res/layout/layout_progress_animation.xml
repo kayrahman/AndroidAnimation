@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/motionLayout"
+    android:background="@color/colorDark"
+    >
+
+
+    <LinearLayout
+        android:id="@+id/linear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="100dp"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Linear" />
+
+        <com.nkr.androidanimation.customView.ProgressCircle.ProgressCircleLayout
+            android:id="@+id/circle_linear"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_gravity="center"
+            app:animateOnDisplay="false"
+            app:animationDuration="1000"
+            app:backgroundCircleColor="#e5eee2"
+            app:currentValue="76"
+            app:endValue="160"
+            app:foregroundCircleColor="@color/colorMustardDark"
+            app:metrics="kg"
+            app:metricsGravity="right"
+            app:startValue="70"
+            app:strokeWidth="20dp" />
+    </LinearLayout>
+
+
+
+</RelativeLayout>
+
+
+<!--
+
+ app:animateOnDisplay="false"
+            app:animationDuration="1000"
+            app:backgroundCircleColor="#16000000"
+            app:currentValue="76"
+            app:endValue="80"
+            app:foregroundCircleColor="#558b2f"
+            app:metrics="kg"
+            app:metricsGravity="right"
+            app:startValue="70"
+            app:strokeWidth="12dp"
+
+-->
