@@ -39,10 +39,12 @@ internal class ProgressCircleView : View {
     private var mAnimationDuration = 0
     private var mBackCircleColor = 0
     private var mForegroundCircleColor = 0
+
     private var mAnimateOnDisplay = false
     private var mAnimationSpeed = 0f
     private var mBackCirclePaint: Paint? = null
     private var mForegroundCirclePaint: Paint? = null
+
     private var mCurrentAngle = 0f
     private var mEndAngle = 0
     private var mAnimationStartTime: Long = 0
@@ -232,12 +234,16 @@ internal class ProgressCircleView : View {
 
     private val currentFrameAngle: Float
         private get() {
+
             val now = System.currentTimeMillis()
             val pathGone =
                 (now - mAnimationStartTime).toFloat() / mAnimationDuration
+
             val interpolatedPathGone = mInterpolator!!.getInterpolation(pathGone)
+
             if (pathGone < 1.0f) {
                 mCurrentAngle = mEndAngle * interpolatedPathGone
+
                 mListener?.onCircleAnimation(getCurrentAnimationFrameValue(interpolatedPathGone))
             } else {
                 mCurrentAngle = mEndAngle.toFloat()
@@ -245,6 +251,8 @@ internal class ProgressCircleView : View {
             }
             return mCurrentAngle
         }
+
+
 
     fun setOnCircleAnimationListener(l: OnCircleAnimationListener) {
         mListener = l

@@ -27,7 +27,9 @@ import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.motion.widget.MotionLayout
 import com.nkr.androidanimation.R
+import com.nkr.androidanimation.customView.PathAnimationDrawable
 import com.nkr.androidanimation.customView.PolygonLapsDrawable
+import kotlinx.android.synthetic.main.activity_path_animation.*
 import kotlinx.android.synthetic.main.layout_polygonal_drawable_animation.*
 
 @RequiresApi(Build.VERSION_CODES.LOLLIPOP) // for View#clipToOutline
@@ -49,7 +51,10 @@ class DemoActivity : AppCompatActivity() {
         if(layout == R.layout.polygonal_animation){
             iv_polygon.setBackgroundDrawable(PolygonLapsDrawable())
 
+        }
 
+        if(layout == R.layout.activity_path_animation){
+            iv_path.setBackgroundDrawable(PathAnimationDrawable())
 
         }
 

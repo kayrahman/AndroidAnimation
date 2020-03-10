@@ -10,10 +10,14 @@ import android.util.Log
 import android.util.TypedValue
 import android.view.View
 import android.view.animation.AccelerateDecelerateInterpolator
+import android.view.animation.AccelerateInterpolator
+import android.view.animation.Interpolator
 import com.nkr.androidanimation.R
 import timber.log.Timber
 
 class ProgressCircularView : View{
+
+    private var mInterpolator: Interpolator? = null
 
     private var mStrokeWidth = 0f
 
@@ -23,6 +27,14 @@ class ProgressCircularView : View{
 
     private var foregroundColor = 0
     private var backgroundProgressColor  = 0
+
+    private var mAnimateOnDisplay = false
+    private var mAnimationSpeed = 0f
+    private var mCurrentAngle = 0f
+    private var mEndAngle = 0
+    private var mAnimationStartTime: Long = 0
+
+
 
     constructor(context: Context?) : super(context)
 
@@ -59,7 +71,7 @@ class ProgressCircularView : View{
         )
         try {
             applyAttributes(context, a)
-          //  setEndAngle()
+            setEndAngle()
            // setAnimationSpeed()
            // log()
         } finally {
@@ -116,6 +128,10 @@ class ProgressCircularView : View{
     override fun onDraw(canvas: Canvas?) {
         super.onDraw(canvas)
 
+        if (mAnimationStartTime == 0L) {
+            mAnimationStartTime = System.currentTimeMillis()
+        }
+
         circleForegroundPaint.strokeWidth = mStrokeWidth
         circleBackgroundPaint.strokeWidth = mStrokeWidth
 
@@ -131,13 +147,62 @@ class ProgressCircularView : View{
             width.toFloat()-mStrokeWidth*2
             ,height.toFloat()-mStrokeWidth*2,
             -90f,
-            mEndValue.toFloat(),
+            currentFrameAngle,
             false,
             circleForegroundPaint
 
         )
 
+        Log.d("current_frame_angle",currentFrameAngle.toString())
+
+
+        if ( mCurrentAngle < mEndAngle) {
+            invalidate()
+        }
+
     }
+
+
+    fun showAnimation() {
+        mAnimateOnDisplay = true
+        mCurrentAngle = 0f
+        mAnimationStartTime = 0
+        invalidate()
+    }
+
+
+    private fun setEndAngle() {
+        val totalLength = mEndValue - mStartValue
+        val pathGone = mCurrentValue - mStartValue
+        val v = pathGone.toFloat() / totalLength
+        mEndAngle = (360 * v).toInt()
+    }
+
+
+    private val currentFrameAngle: Float
+        private get() {
+
+            val now = System.currentTimeMillis()
+            val pathGone =
+                (now - mAnimationStartTime).toFloat() / 1000
+
+            Log.d("path_gone",pathGone.toString())
+
+            mInterpolator = AccelerateInterpolator()
+
+            val interpolatedPathGone = mInterpolator!!.getInterpolation(pathGone)
+
+            if (pathGone < 1.0f) {
+                mCurrentAngle = mEndAngle * interpolatedPathGone
+
+               // mListener?.onCircleAnimation(getCurrentAnimationFrameValue(interpolatedPathGone))
+            } else {
+                mCurrentAngle = mEndAngle.toFloat()
+               // mListener?.onCircleAnimation(getCurrentAnimationFrameValue(1.0f))
+            }
+            return mCurrentAngle
+        }
+
 
 
     private fun getDefaultStrokeWidth(context: Context): Int {

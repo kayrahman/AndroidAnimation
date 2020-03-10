@@ -21,7 +21,8 @@ class HomeActivity : AppCompatActivity(),CompoundButton.OnCheckedChangeListener 
     private val dataset: Array<DemosAdapter.Demo> = arrayOf(
         DemosAdapter.Demo("Property Animation", "Basic motion example using referenced ConstraintLayout files", R.layout.motion_01_basic),
         DemosAdapter.Demo("Polygonal Animation", "Polygonal animation on custom view drawable", R.layout.polygonal_animation),
-        DemosAdapter.Demo("Progress Animation", "Polygonal animation on custom view drawable", R.layout.layout_progress_animation)
+        DemosAdapter.Demo("Progress Animation", "Polygonal animation on custom view drawable", R.layout.layout_progress_animation),
+        DemosAdapter.Demo("Random Path Animation", "Random path animation on custom view drawable", R.layout.activity_path_animation)
 
         )
 

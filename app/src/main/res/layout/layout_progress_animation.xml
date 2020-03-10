@@ -32,11 +32,11 @@
             app:animationDuration="1000"
             app:backgroundCircleColor="#e5eee2"
             app:currentValue="76"
-            app:endValue="160"
+            app:endValue="90"
             app:foregroundCircleColor="@color/colorMustardDark"
             app:metrics="kg"
             app:metricsGravity="right"
-            app:startValue="70"
+            app:startValue="10"
             app:strokeWidth="20dp" />
     </LinearLayout>
 

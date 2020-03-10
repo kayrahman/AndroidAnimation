@@ -172,6 +172,8 @@ companion object {
             val path = Path()
             val angle = 2.0 * PI / sides
             val startAngle = PI / 2.0 + Math.toRadians(360.0 / (2 * sides))
+
+
             path.moveTo(
                 cx + (radius * Math.cos(startAngle)).toFloat(),
                 cy + (radius * Math.sin(startAngle)).toFloat()

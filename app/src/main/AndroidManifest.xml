@@ -10,9 +10,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar">
-
+        <activity android:name=".ui.PathAnimationActivity"></activity>
         <activity android:name=".MainActivity" />
-        <activity android:name=".NeomorphismActivity" />
+        <activity android:name=".ui.PolygonAnimationActivity" />
         <activity android:name=".CordinatorLayout" />
         <activity android:name=".ui.DemoActivity" />
         <activity android:name=".ui.HomeActivity">
