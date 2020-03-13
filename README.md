@@ -9,4 +9,4 @@ This is a continuous series of coding and implementing cool custom view animatio
 </video>
 </p>
 
-
+![polygonal](https://user-images.githubusercontent.com/16632235/76600061-6aa11a80-6530-11ea-887e-3d05135e433a.gif)
