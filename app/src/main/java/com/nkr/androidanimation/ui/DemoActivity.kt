@@ -27,8 +27,10 @@ import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.motion.widget.MotionLayout
 import com.nkr.androidanimation.R
+import com.nkr.androidanimation.customView.CircleAnimationDrawable
 import com.nkr.androidanimation.customView.PathAnimationDrawable
 import com.nkr.androidanimation.customView.PolygonLapsDrawable
+import com.nkr.androidanimation.customView.StraightPathAnimation
 import kotlinx.android.synthetic.main.activity_path_animation.*
 import kotlinx.android.synthetic.main.layout_polygonal_drawable_animation.*
 
@@ -57,6 +59,26 @@ class DemoActivity : AppCompatActivity() {
             iv_path.setBackgroundDrawable(PathAnimationDrawable())
 
         }
+
+        if(layout == R.layout.layout_circle_animation_drawable){
+            iv_path.setBackgroundDrawable(CircleAnimationDrawable())
+
+        }
+
+
+        if(layout == R.layout.layout_starfield){
+            iv_path.setBackgroundDrawable(PathAnimationDrawable())
+
+        }
+
+        if(layout == R.layout.layout_path_animation){
+            iv_path.setBackgroundDrawable(StraightPathAnimation())
+
+        }
+
+
+
+
 
         val debugMode = if (intent.getBooleanExtra("showPaths", false)) {
             MotionLayout.DEBUG_SHOW_PATH

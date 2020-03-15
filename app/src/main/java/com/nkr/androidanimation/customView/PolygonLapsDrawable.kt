@@ -26,7 +26,7 @@ class PolygonLapsDrawable : Drawable(){
 
 
         val dotProgressAnimator =  ObjectAnimator.ofFloat(this, DOT_PROGRESS, 0f, 1f).apply {
-            duration = 12000L
+            duration = 16000L
             interpolator = LinearInterpolator()
             repeatCount = INFINITE
             repeatMode = RESTART
