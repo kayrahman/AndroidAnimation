@@ -10,3 +10,7 @@ This is a continuous series of coding and implementing cool custom view animatio
 </p>
 
 ![polygonal](https://user-images.githubusercontent.com/16632235/76600061-6aa11a80-6530-11ea-887e-3d05135e433a.gif)
+
+## Circular Path Animation
+
+![circle_progress_animation_one](https://user-images.githubusercontent.com/16632235/76774742-86295100-67ce-11ea-86ce-9d75ce80d1ad.gif)
