@@ -8,25 +8,35 @@
     android:background="@color/colorDark"
     >
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true"
+        android:gravity="center"
+        >
+
 
     <LinearLayout
         android:id="@+id/linear"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="100dp"
         android:gravity="center_horizontal"
+        android:layout_margin="@dimen/standard_margin"
         android:orientation="vertical">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Linear" />
+            android:text="Linear"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:textColor="@color/colorMustardDark"
+            />
 
         <com.nkr.androidanimation.customView.ProgressCircle.ProgressCircleLayout
             android:id="@+id/circle_linear"
-            android:layout_width="200dp"
-            android:layout_height="200dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_gravity="center"
             app:animateOnDisplay="false"
             app:animationDuration="1000"
@@ -37,9 +47,118 @@
             app:metrics="kg"
             app:metricsGravity="right"
             app:startValue="10"
-            app:strokeWidth="20dp" />
+            app:strokeWidth="@dimen/stroke_width" />
     </LinearLayout>
 
+    <LinearLayout
+       android:id="@+id/accelerate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/standard_margin"
+
+        android:gravity="center_horizontal"
+        android:layout_toRightOf="@+id/linear"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:text="Accelerate"
+            android:textColor="@color/colorMustardDark"
+            />
+
+        <com.nkr.androidanimation.customView.ProgressCircle.ProgressCircleLayout
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            app:animateOnDisplay="false"
+            app:animationDuration="1000"
+            app:backgroundCircleColor="#e5eee2"
+            app:currentValue="76"
+            app:endValue="90"
+            app:foregroundCircleColor="@color/colorMustardDark"
+            app:metrics="kg"
+            app:metricsGravity="right"
+            app:startValue="10"
+            app:strokeWidth="@dimen/stroke_width"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/deaccelerate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+       android:layout_margin="@dimen/standard_margin"
+        android:gravity="center_horizontal"
+        android:layout_below="@+id/linear"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:text="Deaccelerate"
+            android:textColor="@color/colorMustardDark"
+            />
+
+        <com.nkr.androidanimation.customView.ProgressCircle.ProgressCircleLayout
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            app:animateOnDisplay="false"
+            app:animationDuration="1000"
+            app:backgroundCircleColor="#e5eee2"
+            app:currentValue="76"
+            app:endValue="90"
+            app:foregroundCircleColor="@color/colorMustardDark"
+            app:metrics="kg"
+            app:metricsGravity="right"
+            app:startValue="10"
+            app:strokeWidth="@dimen/stroke_width"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/accelerateDeaccelerate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/standard_margin"
+        android:layout_toRightOf="@+id/deaccelerate"
+        android:layout_below="@+id/accelerate"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:text="A-De accelerate"
+            android:textAlignment="center"
+            android:textColor="@color/colorMustardDark"/>
+
+        <com.nkr.androidanimation.customView.ProgressCircle.ProgressCircleLayout
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            app:animateOnDisplay="false"
+            app:animationDuration="1000"
+            app:backgroundCircleColor="#e5eee2"
+            app:currentValue="76"
+            app:endValue="90"
+            app:foregroundCircleColor="@color/colorMustardDark"
+            app:metrics="kg"
+            app:metricsGravity="right"
+            app:startValue="10"
+            app:strokeWidth="@dimen/stroke_width"/>
+    </LinearLayout>
+
+
+    </RelativeLayout>
 
 
 </RelativeLayout>

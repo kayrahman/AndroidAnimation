@@ -8,8 +8,8 @@
 
     <com.nkr.androidanimation.customView.ProgressCircle.ProgressCircularView
         android:id="@+id/circle"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         />
 
 

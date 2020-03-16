@@ -62,7 +62,9 @@ class ProgressFrameLayout : FrameLayout {
         defStyleAttr: Int,
         defStyleRes: Int
     ) : super(context, attrs, defStyleAttr, defStyleRes) {
+
         init(context, attrs)
+
         mCircle!!.init(context, attrs!!)
     }
 

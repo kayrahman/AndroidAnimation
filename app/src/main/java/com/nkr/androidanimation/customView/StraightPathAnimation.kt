@@ -50,8 +50,6 @@ class StraightPathAnimation : Drawable(){
         val mPaint = Paint()
         mPaint.style = Paint.Style.STROKE
         mPaint.isAntiAlias = true
-        //绘制5px的实线,再绘制5px的透明 从0位置开始
-        //绘制5px的实线,再绘制5px的透明 从0位置开始
         val dashPathEffect2 = DashPathEffect(floatArrayOf(5f, 5f), 0f)
         mPaint.pathEffect = dashPathEffect2
         mPaint.setStrokeWidth(30f)
