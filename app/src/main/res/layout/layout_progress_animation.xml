@@ -8,21 +8,29 @@
     android:background="@color/colorDark"
     >
 
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_centerInParent="true"
         android:gravity="center"
+        android:orientation="vertical"
         >
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
 
     <LinearLayout
         android:id="@+id/linear"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
         android:gravity="center_horizontal"
         android:layout_margin="@dimen/standard_margin"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:layout_weight="1"
+        >
 
         <TextView
             android:layout_width="wrap_content"
@@ -35,30 +43,32 @@
 
         <com.nkr.androidanimation.customView.ProgressCircle.ProgressCircleLayout
             android:id="@+id/circle_linear"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="180dp"
+            android:layout_height="180dp"
             android:layout_gravity="center"
             app:animateOnDisplay="false"
             app:animationDuration="1000"
             app:backgroundCircleColor="#e5eee2"
-            app:currentValue="76"
-            app:endValue="90"
+            app:currentValue="4235"
+            app:endValue="5200"
             app:foregroundCircleColor="@color/colorMustardDark"
-            app:metrics="kg"
-            app:metricsGravity="right"
-            app:startValue="10"
+            app:metrics="steps"
+            app:metricsGravity="bottom"
+            app:startValue="1"
             app:strokeWidth="@dimen/stroke_width" />
     </LinearLayout>
 
     <LinearLayout
        android:id="@+id/accelerate"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
         android:layout_margin="@dimen/standard_margin"
 
         android:gravity="center_horizontal"
         android:layout_toRightOf="@+id/linear"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:layout_weight="1"
+        >
 
         <TextView
             android:layout_width="wrap_content"
@@ -70,30 +80,41 @@
             />
 
         <com.nkr.androidanimation.customView.ProgressCircle.ProgressCircleLayout
-
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:id="@+id/circle_accelerate"
+            android:layout_width="180dp"
+            android:layout_height="180dp"
             android:layout_gravity="center"
             app:animateOnDisplay="false"
             app:animationDuration="1000"
             app:backgroundCircleColor="#e5eee2"
             app:currentValue="76"
             app:endValue="90"
-            app:foregroundCircleColor="@color/colorMustardDark"
+            app:foregroundCircleColor="@color/contentBackground"
             app:metrics="kg"
             app:metricsGravity="right"
             app:startValue="10"
             app:strokeWidth="@dimen/stroke_width"/>
     </LinearLayout>
 
+        </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+
     <LinearLayout
         android:id="@+id/deaccelerate"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
        android:layout_margin="@dimen/standard_margin"
         android:gravity="center_horizontal"
         android:layout_below="@+id/linear"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:layout_weight="1"
+        >
 
         <TextView
             android:layout_width="wrap_content"
@@ -105,16 +126,16 @@
             />
 
         <com.nkr.androidanimation.customView.ProgressCircle.ProgressCircleLayout
-
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:id="@+id/circle_deaccelerate"
+            android:layout_width="180dp"
+            android:layout_height="180dp"
             android:layout_gravity="center"
             app:animateOnDisplay="false"
             app:animationDuration="1000"
             app:backgroundCircleColor="#e5eee2"
             app:currentValue="76"
             app:endValue="90"
-            app:foregroundCircleColor="@color/colorMustardDark"
+            app:foregroundCircleColor="@color/colorThree"
             app:metrics="kg"
             app:metricsGravity="right"
             app:startValue="10"
@@ -123,42 +144,61 @@
 
     <LinearLayout
         android:id="@+id/accelerateDeaccelerate"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
         android:layout_margin="@dimen/standard_margin"
         android:layout_toRightOf="@+id/deaccelerate"
         android:layout_below="@+id/accelerate"
         android:gravity="center_horizontal"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:layout_weight="1"
+        >
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="22sp"
             android:textStyle="bold"
-            android:text="A-De accelerate"
+            android:text="A-Decelerate"
             android:textAlignment="center"
             android:textColor="@color/colorMustardDark"/>
 
         <com.nkr.androidanimation.customView.ProgressCircle.ProgressCircleLayout
-
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:id="@+id/circle_accelerate_deaccelerate"
+            android:layout_width="180dp"
+            android:layout_height="180dp"
             android:layout_gravity="center"
             app:animateOnDisplay="false"
             app:animationDuration="1000"
             app:backgroundCircleColor="#e5eee2"
             app:currentValue="76"
             app:endValue="90"
-            app:foregroundCircleColor="@color/colorMustardDark"
+            app:foregroundCircleColor="@color/colorNine"
             app:metrics="kg"
             app:metricsGravity="right"
             app:startValue="10"
             app:strokeWidth="@dimen/stroke_width"/>
     </LinearLayout>
 
+    </LinearLayout>
 
-    </RelativeLayout>
+
+
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_start"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Start"
+        android:textSize="21sp"
+        android:textStyle="bold"
+        android:fontFamily="sans-serif-condensed"
+        android:background="@drawable/bg_btn_selector"
+        android:layout_alignParentBottom="true"
+        />
+
 
 
 </RelativeLayout>

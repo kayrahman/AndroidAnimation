@@ -26,4 +26,20 @@
     <color name="colorDark">#1d1e1d</color>
     <color name="colorBlack">#000000</color>
 
+    <!--new colors-->
+
+    <color name="colorOne">#ffe84c65</color>
+    <color name="colorTwo">#ffd554d9</color>
+    <color name="colorThree">#ffaf6eee</color>
+    <color name="colorFour">#ff4a4ae6</color>
+    <color name="colorFive">#ff4294e7</color>
+    <color name="colorSix">#ff6beeee</color>
+    <color name="colorSeven">#ff42e794</color>
+    <color name="colorEight">#ff5ae75a</color>
+    <color name="colorNine">#ffade76b</color>
+    <color name="colorTen">#ffefefbb</color>
+    <color name="colorEleven">#ffe79442</color>
+    <color name="colorTweleve">#ffe84c65</color>
+
+
 </resources>

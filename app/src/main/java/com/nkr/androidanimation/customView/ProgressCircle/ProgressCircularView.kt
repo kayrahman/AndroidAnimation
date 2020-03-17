@@ -9,11 +9,10 @@ import android.util.AttributeSet
 import android.util.Log
 import android.util.TypedValue
 import android.view.View
-import android.view.animation.AccelerateDecelerateInterpolator
 import android.view.animation.AccelerateInterpolator
 import android.view.animation.Interpolator
 import com.nkr.androidanimation.R
-import timber.log.Timber
+import com.nkr.androidanimation.customView.ProgressCircle.ExampleJava.OnCircleAnimationListener
 
 class ProgressCircularView : View{
 
@@ -33,6 +32,8 @@ class ProgressCircularView : View{
     private var mCurrentAngle = 0f
     private var mEndAngle = 0
     private var mAnimationStartTime: Long = 0
+
+    private var mListener: OnCircleAnimationListener? = null
 
 
 
@@ -186,19 +187,15 @@ class ProgressCircularView : View{
             val pathGone =
                 (now - mAnimationStartTime).toFloat() / 1000
 
-            Log.d("path_gone",pathGone.toString())
-
-            mInterpolator = AccelerateInterpolator()
 
             val interpolatedPathGone = mInterpolator!!.getInterpolation(pathGone)
 
             if (pathGone < 1.0f) {
                 mCurrentAngle = mEndAngle * interpolatedPathGone
-
-               // mListener?.onCircleAnimation(getCurrentAnimationFrameValue(interpolatedPathGone))
+                mListener?.onCircleAnimation(getCurrentAnimationFrameValue(interpolatedPathGone))
             } else {
                 mCurrentAngle = mEndAngle.toFloat()
-               // mListener?.onCircleAnimation(getCurrentAnimationFrameValue(1.0f))
+                mListener?.onCircleAnimation(getCurrentAnimationFrameValue(1.0f))
             }
             return mCurrentAngle
         }
@@ -209,5 +206,20 @@ class ProgressCircularView : View{
         return (context.resources.displayMetrics.density * 10).toInt()
     }
 
+
+    fun getCurrentAnimationFrameValue(interpolatedPathGone: Float): String? {
+        val value =
+            Math.round((mCurrentValue - mStartValue) * interpolatedPathGone) + mStartValue
+        return value.toString()
+    }
+
+
+    fun setInterpolator(i: Interpolator) {
+        mInterpolator = i
+    }
+
+    fun setOnCircleAnimationListener(l: OnCircleAnimationListener) {
+        mListener = l
+    }
 
 }

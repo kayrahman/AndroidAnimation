@@ -21,7 +21,6 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.RecyclerView
-import com.nkr.androidanimation.MainActivity
 import com.nkr.androidanimation.R
 import com.nkr.androidanimation.ui.DemoActivity
 import com.nkr.androidanimation.ui.HomeActivity
