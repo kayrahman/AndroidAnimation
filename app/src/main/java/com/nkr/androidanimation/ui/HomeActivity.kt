@@ -25,7 +25,8 @@ class HomeActivity : AppCompatActivity(),CompoundButton.OnCheckedChangeListener 
         DemosAdapter.Demo("Random Path Animation", "Random path animation on custom view drawable", R.layout.activity_path_animation),
         DemosAdapter.Demo("Circle Animation", "Circle animation on custom view drawable", R.layout.layout_circle_animation_drawable),
         DemosAdapter.Demo("Starfield Animation", "Starfield animation simulation", R.layout.layout_starfield),
-        DemosAdapter.Demo("Another Path Animation", "Path animation on a straight line", R.layout.layout_path_animation)
+        DemosAdapter.Demo("Another Path Animation", "Path animation on a straight line", R.layout.layout_path_animation),
+        DemosAdapter.Demo("TextView Practice", "Textview Practice", R.layout.fragment_letter_practice_dummy)
 
         )
 

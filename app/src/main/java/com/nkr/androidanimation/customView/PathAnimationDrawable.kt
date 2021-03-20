@@ -86,9 +86,7 @@ class PathAnimationDrawable : Drawable(){
 
 
     override fun draw(canvas: Canvas) {
-
         for(i in 0 until 8){
-
             pointPosition.computeXYForSpeed(i,160f)
            val cx = pointPosition.x
            val cy = pointPosition.y
@@ -96,9 +94,7 @@ class PathAnimationDrawable : Drawable(){
             val randomPath = RandomPath(cx,cy, c[i],4,50f)
 
            linePaint.color = randomPath.color
-
             canvas.drawPath(randomPath.path, linePaint)
-
 
             val phase = randomPath.initialPhase + dotProgress * randomPath.length * 2
             dotPaint.pathEffect = PathDashPathEffect(pathDot,randomPath.length ,phase,PathDashPathEffect.Style.TRANSLATE)

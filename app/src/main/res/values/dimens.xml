@@ -10,4 +10,19 @@
     <dimen name="text_margin">8dp</dimen>
     <dimen name="stroke_width">12dp</dimen>
 
+
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="main_letter_size">60dp</dimen>
+    <dimen name="third_letter_size">20dp</dimen>
+    <dimen name="fourth_letter_size">18dp</dimen>
+    <dimen name="secondary_letter_size">45dp</dimen>
+    <dimen name="main_letter_box_size">85dp</dimen>
+    <dimen name="letter_canvas_size">290sp</dimen>
+    <dimen name="letter_canvas_size_land">294sp</dimen>
+    <dimen name="word_canvas_size">180sp</dimen>
+    <dimen name="word_canvas_size_land">220sp</dimen>
+    <dimen name="number_canvas_size">370sp</dimen>
+    <dimen name="number_canvas_size_land">320sp</dimen>
+
 </resources>

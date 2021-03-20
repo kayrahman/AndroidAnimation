@@ -106,8 +106,6 @@ class DemoActivity : AppCompatActivity() {
 
         if(layout == R.layout.activity_main){
 
-
-
             rotateButton.setOnClickListener {
                 val animator = ObjectAnimator.ofFloat(star, View.ROTATION, -360f, 0f)
                 animator.duration = 1000
