@@ -58,33 +58,33 @@ class DemoActivity : AppCompatActivity() {
             icon?.clipToOutline = true
         }*/
 
-        if(layout == R.layout.polygonal_animation){
+        if (layout == R.layout.polygonal_animation) {
             iv_polygon.setBackgroundDrawable(PolygonLapsDrawable())
 
         }
 
-        if(layout == R.layout.activity_path_animation){
+        if (layout == R.layout.activity_path_animation) {
             iv_path.setBackgroundDrawable(PathAnimationDrawable())
 
         }
 
-        if(layout == R.layout.layout_circle_animation_drawable){
+        if (layout == R.layout.layout_circle_animation_drawable) {
             iv_path.setBackgroundDrawable(CircleAnimationDrawable())
 
         }
 
 
-        if(layout == R.layout.layout_starfield){
+        if (layout == R.layout.layout_starfield) {
             iv_path.setBackgroundDrawable(PathAnimationDrawable())
 
         }
 
-        if(layout == R.layout.layout_path_animation){
+        if (layout == R.layout.layout_path_animation) {
             iv_path.setBackgroundDrawable(StraightPathAnimation())
 
         }
 
-        if(layout == R.layout.layout_progress_animation){
+        if (layout == R.layout.layout_progress_animation) {
 
             circle_linear.setInterpolator(LinearInterpolator())
             circle_accelerate.setInterpolator(AccelerateInterpolator())
@@ -101,10 +101,9 @@ class DemoActivity : AppCompatActivity() {
             }
 
 
-
         }
 
-        if(layout == R.layout.activity_main){
+        if (layout == R.layout.activity_main) {
 
             rotateButton.setOnClickListener {
                 val animator = ObjectAnimator.ofFloat(star, View.ROTATION, -360f, 0f)
@@ -139,11 +138,7 @@ class DemoActivity : AppCompatActivity() {
             }
 
 
-
         }
-
-
-
 
 
         val debugMode = if (intent.getBooleanExtra("showPaths", false)) {
@@ -202,8 +197,6 @@ class DemoActivity : AppCompatActivity() {
     }
 
 
-
-
     private fun colorizer() {
 
         // Animate the color of the star's container from black to red over a half
@@ -212,8 +205,10 @@ class DemoActivity : AppCompatActivity() {
         // (in Kotlin) or setBackgroundColor(int) (in Java).
 
         var animator = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            ObjectAnimator.ofArgb(star.parent,
-                "backgroundColor", Color.BLACK, Color.CYAN)
+            ObjectAnimator.ofArgb(
+                star.parent,
+                "backgroundColor", Color.BLACK, Color.CYAN
+            )
         } else {
             TODO("VERSION.SDK_INT < LOLLIPOP")
         }
@@ -243,9 +238,9 @@ class DemoActivity : AppCompatActivity() {
         newStar.backgroundTintList = this.resources.getColorStateList(R.color.colorMustardDark)
         newStar.layoutParams = FrameLayout.LayoutParams(
             FrameLayout.LayoutParams.WRAP_CONTENT,
-            FrameLayout.LayoutParams.WRAP_CONTENT)
+            FrameLayout.LayoutParams.WRAP_CONTENT
+        )
         container.addView(newStar)
-
 
 
         // Scale the view randomly between 10-160% of its default size
@@ -264,8 +259,10 @@ class DemoActivity : AppCompatActivity() {
         mover.interpolator = AccelerateInterpolator(1f)
 
         // Create an animator to rotateButton the view around its center up to three times
-        val rotator = ObjectAnimator.ofFloat(newStar, View.ROTATION,
-            (Math.random() * 1080).toFloat())
+        val rotator = ObjectAnimator.ofFloat(
+            newStar, View.ROTATION,
+            (Math.random() * 1080).toFloat()
+        )
         rotator.interpolator = LinearInterpolator()
 
         // Use an AnimatorSet to play the falling and rotating animators in parallel for a duration
@@ -283,9 +280,6 @@ class DemoActivity : AppCompatActivity() {
 
         // Start the animation
         set.start()
-
-
-
     }
 
 

@@ -3,6 +3,7 @@
     package="com.nkr.androidanimation">
 
     <uses-feature android:name="android.hardware.camera.any" />
+
     <uses-permission android:name="android.permission.CAMERA" />
 
     <application
@@ -13,25 +14,17 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar">
-        <activity android:name=".ui.CameraActivity">
+        <activity android:name=".ui.HomeActivity"></activity>
+        <activity android:name=".ui.DynamicLayoutActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.PathAnimationActivity" />
-        <activity android:name=".MainActivity" />
         <activity android:name=".ui.PolygonAnimationActivity" />
         <activity android:name=".CordinatorLayout" />
         <activity android:name=".ui.DemoActivity" />
-        <activity android:name=".ui.HomeActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
     </application>
 
 </manifest>
